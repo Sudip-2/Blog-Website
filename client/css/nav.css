@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root{
+--mainlogosize:45px;
+--lightdarktogglebtnSize:30px;
+--searchlogoSize:15px;
+--text-color:black;
+--navbar-color:rgb(236, 236, 236);
+--fontfamily:"Fredoka", sans-serif;
+}
+
+body {
+    font-family: var(--fontfamily);
+}
+
+.navContainer{
+    padding: 20px 0px;
+    margin-bottom: 5px;
+    position: sticky;
+    top: 0;
+    transition: background-color 0.3s ;
+    z-index: 1;
+}
+
+.navContainer.active{
+    background-color: rgb(201, 242, 255);
+}
+
+nav{
+    max-width: 1180px;
+}
+
+.navHyperLinks{
+    gap: 35px;
+}
+
+.navHyperLinks li{
+    list-style: none;
+}
+
+#SudipBlogsTitle,.navHyperLinks abbr,a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#SudipBlogsFirstTitle{
+    font-size: 1.4rem;
+}
+
+#SudipBlogsFirstTitle::before{
+    content: 'Sudip';
+    font-weight: normal;
+
+}
+
+.navHyperLinks a:hover{
+    text-decoration: underline rgb(29, 105, 247);
+}
+
+.navHyperLinks a{
+    color: var(--text-color);
+}
+
+.searchDarkModeToggleBtn {
+    position: relative;
+    gap: 20px;
+}
+
+.searchbar input{
+    border: transparent;
+    background-color: var(--navbar-color);
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.searchbar input:focus{
+    background-color: rgba(0, 162, 255,0.2);
+    outline: none;
+}
+
+#searchlogo{
+    position:absolute ;
+    top: 8px;
+    right: 57px;
+    cursor: pointer;
+}
+
+#lightdarktogglebtn{
+    cursor: pointer;
+}
+
+
+#SudipBlogsTitle{
+    margin-left:5px ;
+}
+
+#main-logo{
+    height: var(--mainlogosize);
+    border-radius: 50%;
+}
+
+#lightdarktogglebtn{
+    height: var(--lightdarktogglebtnSize);
+}
+
+#searchlogo{
+    height: var(--searchlogoSize);
+}
