@@ -1,15 +1,21 @@
 import express from 'express'
 import mongoose from 'mongoose'
-// import userRouter from './routes/user.js'
+import userRouter from './routes/user.js'
 import blogRouter from './routes/blogs.js'
+import notifyRouter from './routes/notify.js'
+import dotenv from 'dotenv'
+import cors from 'cors'
 
-const url = "mongodb://localhost:27017/Blog-site"
+dotenv.config()
+const url = process.env.db_url
 const app = express()
-const port = 3000
+const port = process.env.port
 let a = await mongoose.connect(url)
 
-// app.use('/users', userRouter);
+app.use(cors())
+app.use('/users', userRouter);
 app.use('/blogs', blogRouter);
+app.use('/notify', notifyRouter);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

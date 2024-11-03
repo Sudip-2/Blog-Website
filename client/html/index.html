@@ -4,51 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudip Blogs | web developer </title>
+    <title>Sudip Blogs</title>
     <link rel="stylesheet" href="../css/utility.css">
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/footer.css">
     <link rel="shortcut icon" href="../images/sudip.jpg" type="jpg">
 </head>
 
 <body>
-    <div class="container">
-        <!-- Navbar -->
-         <div class="navContainer ">
-            <nav class=" flex j-spacebetween a-center m-inline">
-            <div class="logoText flex a-center">
-                <img src="../images/logo.jpg" alt="main logo" id="main-logo">
-                <abbr title="Sudip Blogs home" id="SudipBlogsTitle">
-                    <a href="./index.html"><h2 id="SudipBlogsFirstTitle">Blogs</h2></a>
-                </abbr>
+    <!-- Navbar -->
+     <div class="navContainer ">
+        <nav class=" flex j-spacebetween a-center m-inline ">
+        <div class="logoText flex a-center">
+            <img src="../images/logo.jpg" alt="main logo" id="main-logo">
+            <abbr title="Sudip Blogs home" id="SudipBlogsTitle">
+                <a href="./index.html"><h2 id="SudipBlogsFirstTitle">Blogs</h2></a>
+            </abbr>
+        </div>
+        <div class="navHyperLinks flex a-center ">
+            <abbr title="Home">
+                <li><a href="./index.html">Home</a></li>
+            </abbr>
+            <abbr title="Contact">
+                <li><a href="./contact.html">Contact</a></li>
+            </abbr>
+            <abbr title="LikedIn">
+                <li><a href="https://www.linkedin.com/in/sudip-paul18/" target="_blank">LikedIn</a></li>
+            </abbr>
+            <abbr title="All blogs">
+                <li><a href="./allblogs.html">All blogs</a></li>
+            </abbr>
+        </div>
+        <div class="searchDarkModeToggleBtn flex a-center ">
+            <div class="searchbar">
+                <abbr title="search bar"><input type="text" placeholder="Search" class="search-bar-box "></abbr>
+                <img src="../images/search.png" alt="searchlogo" id="searchlogo">
             </div>
-            <div class="navHyperLinks flex a-center ">
-                <abbr title="Home">
-                    <li><a href="./index.html">Home</a></li>
-                </abbr>
-                <abbr title="Contact">
-                    <li><a href="./contact.html">Contact</a></li>
-                </abbr>
-                <abbr title="LikedIn">
-                    <li><a href="https://www.linkedin.com/in/sudip-paul18/" target="_blank">LikedIn</a></li>
-                </abbr>
-                <abbr title="All blogs">
-                    <li><a href="./allblogs.html">All blogs</a></li>
-                </abbr>
+            <img src="../images/lightdark.png" alt="light dark toggle button" id="lightdarktogglebtn">
+            <div class="spanForNav">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <div class="searchDarkModeToggleBtn flex a-center">
-                <div class="searchbar">
-                    <abbr title="search bar"><input type="text" placeholder="Search"></abbr>
-                    <img src="../images/search.png" alt="searchlogo" id="searchlogo">
-                </div>
-                <img src="../images/lightdark.png" alt="light dark toggle button" id="lightdarktogglebtn">
-            </div>
-        </nav>
-         </div>
-        
-        <!-- Navbar -->
+        </div>
+    </nav>
+     </div>
+    <!-- Navbar -->
 
+    <div class="container">
         <main>
             <!-- About writer section -->
             <div class="aboutWriter flex flex-dir-c m-inline a-center j-center">
@@ -60,9 +63,7 @@
                     </div>
                 </div>
                 <div class="writerAboutPara ">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae blanditiis, voluptates
-                        autem beatae error voluptatum quo quisquam veritatis! Recusandae, veniam Lorem ipsum dolor sit
-                        amet consectetur, adipisicing elit. Saepe, quos?</p>
+                    <p>Hello I am Sudip currently a 2nd year student, I am really Passionate about Web development and content writing I hope you enjoy my blogs they are all written by me . My blogs are not strictly technical they are a mixture of personal fun experiences and web development or any other technology</p>
                 </div>
                 <div class="socialLinks flex a-center ">
                     <a href="https://github.com/Sudip-2" target="_blank"><img
@@ -77,34 +78,41 @@
                 </div>
             </div>
             <!-- About writer section -->
+
+            <!-- Blog post section -->
             <div class="blogLatestPostContainer m-inline ">
-                <h3 id="latestPostTxt">Latest Post</h3>
+                <h3 id="latestPostTxt">Latest Blogs</h3>
 
-                <div class="LatestPostContainer ">
-
-                    <div class="blogPostLatestCard ">
-                        <div id="blogImgContainer">
-                            <img src="../images/stock.png" alt="" id="stockBlogPic">  
-                        </div>
-
-                        <div class="blogPostLatestAbout flex flex-dir-c j-spaceeven">
-                            <h4 id="tags">Technology</h4>
-                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus saepe ut excepturi.
-                            </h3>
-                            <div class="LatestPoststats flex j-spacebetween a-center">
-                                <div class="LatestPoststatsImgwriter flex a-center">
-                                    <img src="../images/sudip.jpg" alt="writer image" id="LatestPoststatsImg">
-                                    <h4 id="LatestPoststatswriter">Sudip Paul</h4>
-                                </div>
-                                <p>August 20, 2024</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="LatestPostContainer">
 
                 </div>
-            </div>
+                </div>
+                    <template class="blogCards">
+                        <div class="blogPostLatestCard">
+                            <div id="blogImgContainer">
+                                <img src="../images/stock.png" alt="" id="stockBlogPic">  
+                            </div>
+    
+                            <div class="blogPostLatestAbout flex flex-dir-c j-spaceeven">
+                                <h4 id="tags">Technology</h4>
+                                <h3 id="blogTitle">Lorem ipsum dolor sit amet consectetur elit.
+                                </h3>
+                                <h4 id="blogdesc">Lorem ipsum dolor sit amet conse adpisicing elit. Possimus saepe ut excepturi.
+                                </h4>
+                                <div class="LatestPoststats flex j-spacebetween a-center">
+                                    <div class="LatestPoststatsImgwriter flex a-center">
+                                        <img src="../images/sudip.jpg" alt="writer image" id="LatestPoststatsImg">
+                                        <h4 id="LatestPoststatswriter">Sudip Paul</h4>
+                                    </div>
+                                    <p id="dateMonth">August 20, 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
         </main>
+        <!-- Blog post section -->
 
+        <!-- Footer section -->
         <footer class="footerContainer">
                 <abbr title="Date"><p>&copy; 2024</p></abbr>
                 <a href="https://www.linkedin.com/in/sudip-paul18/" target="_blank">LinkedIn</a>
@@ -112,7 +120,10 @@
                 <a href="mailto:p452570@gmail.com" target="_blank">Email</a>
                 <a href="https://sudip-2.github.io/portfolio-project-sudip/" target="_blank">Portfolio</a>
         </footer>
+        <!-- Footer section -->
     </div>
 </body>
 <script src="../javascript/nav.js"></script>
+<script src="../javascript/blogloading.js"></script>
+<script src="../javascript/push-notfy.js"></script>
 </html>

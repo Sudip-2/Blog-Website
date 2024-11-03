@@ -35,7 +35,7 @@
     gap: 20px;
 }
 
-#follow-btn{
+#follow-btn {
     padding: 6px 8px;
     cursor: pointer;
     border: 1px solid rgb(216, 216, 216);
@@ -43,7 +43,7 @@
     border-radius: 5px;
 }
 
-#follow-btn:hover{
+#follow-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid rgb(194, 194, 194);
 }
@@ -70,79 +70,125 @@
 /* About writer section  */
 
 /* Blog Container */
-.blogLatestPostContainer{
+.container{
+    padding: 0px 10px;
+}
+
+.blogLatestPostContainer {
     max-width: 1180px;
 }
 
 .LatestPostContainer{
-    margin-bottom: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     row-gap: 20px;
     column-gap: 20px;
 }
 
-#latestPostTxt{
+#latestPostTxt {
     margin: 30px 0px;
 }
 
 .blogPostLatestCard{
-    height: 360px;
+    min-height: 360px;
     padding: 10px 10px;
-    border: 1px solid rgb(204, 204, 204);
+    border: 1px solid rgb(192, 191, 191);
     border-radius: 15px;
     cursor: pointer;
 }
 
-#blogImgContainer{
+#blogImgContainer {
     overflow: hidden;
     border-radius: 12px;
 }
 
-#stockBlogPic{
+#stockBlogPic {
     border-radius: 12px;
     width: 100%;
     height: 180px;
     transition: transform 0.5s ease-in-out;
 }
 
-#stockBlogPic:hover{
+#stockBlogPic:hover {
     transform: scale(1.05);
 }
 
-.blogPostLatestAbout{
+.blogPostLatestAbout {
     height: 160px;
 }
 
-#LatestPoststatsImg{
+#LatestPoststatsImg {
     height: 25px;
     border-radius: 50%;
 }
 
-.LatestPoststatsImgwriter{
+.LatestPoststatsImgwriter {
     gap: 5px;
 }
 
-.LatestPoststats p{
+.LatestPoststats p {
     font-size: 0.9rem;
 }
+
+#tags{
+    font-size: 0.75rem;
+}
+
+#blogdesc{
+    /* border: solid; */
+    margin-bottom: 6px;
+    font-weight: normal;
+}
+
+#blogTitle{
+    font-size: 1.1rem;
+}
+
 /* Blog Container */
 
 /* Footer */
-.footerContainer{
-    width: var(--width);
+.footerContainer {
+    max-width: var(--width);
     display: flex;
-    gap:40px ;
+    gap: 40px;
     margin-inline: auto;
     padding: 20px 0px;
     align-items: center;
 }
-.footerContainer a,p,abbr{
+
+.footerContainer a,
+p,
+abbr {
     font-size: 1.2rem;
     color: var(--text-color);
     text-decoration: none;
 }
-.footerContainer a:hover,.footerContainer p:hover{
+
+.footerContainer a:hover,
+.footerContainer p:hover {
     text-decoration: underline rgb(29, 105, 247);
 }
+
 /* Footer */
+
+/* Media query for phone */
+
+@media screen and (max-width:550px) {
+    .writerAboutPara{
+        padding: 0px 10px;
+    }
+
+    .writerAboutPara p{
+        font-size: 1rem;
+    }
+
+    .footerContainer {
+        gap: 25px;
+    }
+
+    .footerContainer a,
+    p,
+    abbr {
+        font-size: 1rem;
+    }
+}
