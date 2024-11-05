@@ -1,21 +1,25 @@
 :root {
     --text-color: black;
-    --text-color-two:black;
+    --text-color-two: black;
     --navbar-color: rgb(236, 236, 236);
     --fontfamily: "Lato", sans-serif;
     --writeraboutpfp: 50px;
     --width: 1180px;
     --social-links-size: 22px;
-    --abtwrite:rgb(240, 240, 240);
-    --blog-border-clr:rgb(192, 191, 191);
-    --text-decor-underline:rgb(29, 105, 247);
+    --abtwrite: rgb(240, 240, 240);
+    --blog-border-clr: rgb(192, 191, 191);
+    --text-decor-underline: rgb(29, 105, 247);
+    --submitClr: white;
+    --input-clr: white;
 }
 
-.darkmodemain{
-    --text-color:white;
-    --abtwrite:rgba(83, 83, 83, 0.2);
-    --text-color-two:rgb(202, 202, 202);
-    --blog-border-clr:rgba(83, 83, 83, 0.2);
+.darkmodemain {
+    --text-color: white;
+    --abtwrite: rgba(83, 83, 83, 0.2);
+    --text-color-two: rgb(202, 202, 202);
+    --blog-border-clr: rgba(83, 83, 83, 0.2);
+    --submitClr: black;
+    --input-clr: rgba(202, 202, 202, .3);
 }
 
 /* About writer section  */
@@ -33,15 +37,15 @@
     text-align: center;
 }
 
-.nameTitle>h2{
+.nameTitle>h2 {
     color: var(--text-color);
 }
 
-.nameTitle p{
+.nameTitle p {
     color: var(--text-color-two);
 }
 
-.writerAboutPara>p{
+.writerAboutPara>p {
     color: var(--text-color-two);
 }
 
@@ -93,7 +97,7 @@
 /* About writer section  */
 
 /* Blog Container */
-.container{
+.container {
     padding: 0px 10px;
 }
 
@@ -101,7 +105,7 @@
     max-width: 1180px;
 }
 
-.LatestPostContainer{
+.LatestPostContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     row-gap: 20px;
@@ -113,7 +117,7 @@
     color: var(--text-color);
 }
 
-.blogPostLatestCard{
+.blogPostLatestCard {
     min-height: 360px;
     padding: 10px 10px;
     border: 1px solid var(--blog-border-clr);
@@ -154,26 +158,102 @@
     font-size: 0.9rem;
 }
 
-#tags{
+#tags {
     font-size: 0.75rem;
     color: var(--text-color-two);
 }
 
-#blogdesc{
+#blogdesc {
     margin-bottom: 6px;
     font-weight: normal;
     color: var(--text-color-two);
 }
 
-#blogTitle{
+#blogTitle {
     font-size: 1.1rem;
     color: var(--text-color);
 }
 
-#LatestPoststatswriter,#dateMonth{
+#LatestPoststatswriter,
+#dateMonth {
     color: var(--text-color-two);
 }
+
 /* Blog Container */
+
+/* contact us part */
+.contactContainer {
+    max-width: var(--width);
+    margin-inline: auto;
+    height: 82vh;
+    justify-content: space-around;
+}
+
+#contactHeading {
+    color: var(--text-color);
+    width: 300px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+#labelOfNameInCont,
+#labelOfEmailInCont,
+#labelForMessageInCont {
+    color: var(--text-color-two);
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.contactForm {
+    gap: 20px;
+}
+
+.nameEmail {
+    justify-content: center;
+    gap: 3rem;
+}
+
+.nameEmail input {
+    border-radius: 12px;
+    width: 18rem;
+    height: 3.5rem;
+    padding-left: 15px;
+    border: var(--blog-border-clr) solid 1px;
+    font-size: 20px;
+    background-color: var(--input-clr);
+}
+
+#contactFormMessage {
+    border-radius: 12px;
+    padding-left: 15px;
+    border: var(--blog-border-clr) solid 1px;
+    font-size: 20px;
+    width: 39rem;
+    height: 12rem;
+    padding-top: 30px;
+    background-color: var(--input-clr);
+}
+
+#submitBtnForContactForm {
+    color: var(--submitClr);
+    background-color: var(--text-color-two);
+    height: 3.5rem;
+    width: 8.5rem;
+    border-radius: 35px;
+    border: transparent;
+    font-size: 1.4rem;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#nameOfnameEmail::placeholder,
+#emailOfnameEmail::placeholder,
+#contactFormMessage::placeholder {
+    color: var(--text-color-two);
+}
+
+/* contact us part */
 
 /* Footer */
 .footerContainer {
@@ -201,13 +281,26 @@ abbr {
 /* Footer */
 
 /* Media query for phone */
+@media screen and (max-width:680px) {
+    .nameEmail {
+        gap: 20px;
+    }
+
+    .nameEmail input {
+        width: 15rem;
+    }
+
+    #contactFormMessage {
+        width: 30rem;
+    }
+}
 
 @media screen and (max-width:550px) {
-    .writerAboutPara{
+    .writerAboutPara {
         padding: 0px 10px;
     }
 
-    .writerAboutPara p{
+    .writerAboutPara p {
         font-size: 1rem;
     }
 
@@ -219,5 +312,20 @@ abbr {
     p,
     abbr {
         font-size: 1rem;
+    }
+
+    .nameEmail {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nameEmail input {
+        width: 20rem;
+        height: 3rem;
+    }
+
+    #contactFormMessage {
+        width: 20rem;
+        height: 10rem;
     }
 }

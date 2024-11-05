@@ -126,6 +126,7 @@ a{
     list-style: none;
     padding: 8px 10px;
     cursor: pointer;
+    font-size: 0.8rem;
 }
 
 .searchRecomendationBox>ul li:hover{
