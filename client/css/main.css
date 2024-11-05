@@ -1,16 +1,27 @@
 :root {
     --text-color: black;
+    --text-color-two:black;
     --navbar-color: rgb(236, 236, 236);
     --fontfamily: "Lato", sans-serif;
     --writeraboutpfp: 50px;
     --width: 1180px;
     --social-links-size: 22px;
+    --abtwrite:rgb(240, 240, 240);
+    --blog-border-clr:rgb(192, 191, 191);
+    --text-decor-underline:rgb(29, 105, 247);
+}
+
+.darkmodemain{
+    --text-color:white;
+    --abtwrite:rgba(83, 83, 83, 0.2);
+    --text-color-two:rgb(202, 202, 202);
+    --blog-border-clr:rgba(83, 83, 83, 0.2);
 }
 
 /* About writer section  */
 .aboutWriter {
     max-width: var(--width);
-    background-color: rgb(240, 240, 240);
+    background-color: var(--abtwrite);
     min-height: 250px;
     gap: 22px;
     border-radius: 10px;
@@ -20,6 +31,18 @@
 .writerAboutPara {
     max-width: 500px;
     text-align: center;
+}
+
+.nameTitle>h2{
+    color: var(--text-color);
+}
+
+.nameTitle p{
+    color: var(--text-color-two);
+}
+
+.writerAboutPara>p{
+    color: var(--text-color-two);
 }
 
 .writerPfpName {
@@ -87,12 +110,13 @@
 
 #latestPostTxt {
     margin: 30px 0px;
+    color: var(--text-color);
 }
 
 .blogPostLatestCard{
     min-height: 360px;
     padding: 10px 10px;
-    border: 1px solid rgb(192, 191, 191);
+    border: 1px solid var(--blog-border-clr);
     border-radius: 15px;
     cursor: pointer;
 }
@@ -132,18 +156,23 @@
 
 #tags{
     font-size: 0.75rem;
+    color: var(--text-color-two);
 }
 
 #blogdesc{
-    /* border: solid; */
     margin-bottom: 6px;
     font-weight: normal;
+    color: var(--text-color-two);
 }
 
 #blogTitle{
     font-size: 1.1rem;
+    color: var(--text-color);
 }
 
+#LatestPoststatswriter,#dateMonth{
+    color: var(--text-color-two);
+}
 /* Blog Container */
 
 /* Footer */
@@ -160,13 +189,13 @@
 p,
 abbr {
     font-size: 1.2rem;
-    color: var(--text-color);
+    color: var(--text-color-two);
     text-decoration: none;
 }
 
 .footerContainer a:hover,
 .footerContainer p:hover {
-    text-decoration: underline rgb(29, 105, 247);
+    text-decoration: underline var(--text-decor-underline);
 }
 
 /* Footer */

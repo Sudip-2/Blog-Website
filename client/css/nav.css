@@ -7,10 +7,24 @@
 --text-color:black;
 --navbar-color:rgb(236, 236, 236);
 --fontfamily:"Fredoka", sans-serif;
+--searchBoxclr:rgba(0, 162, 255,0.2);
+--greyclr:black;
+--hamburger-color:rgb(236, 236, 236);
+--navbar-active-clr:rgb(201, 242, 255);
+
 }
 
 body {
     font-family: var(--fontfamily);
+}
+
+.darkmode{
+    background-color: rgba(6, 6, 24, 0.9);
+    --text-color: white;
+    --greyclr:rgb(202, 202, 202);
+    --navbar-color:rgba(83, 83, 83, 0.2);
+    --hamburger-color:rgb(46, 46, 46);
+    --navbar-active-clr:rgb(18, 13, 43);
 }
 
 .navContainer{
@@ -23,7 +37,7 @@ body {
 }
 
 .navContainer.active{
-    background-color: rgb(201, 242, 255);
+    background-color: var(--navbar-active-clr);
 }
 
 nav{
@@ -38,9 +52,16 @@ nav{
     list-style: none;
 }
 
-#SudipBlogsTitle,.navHyperLinks abbr,a{
+a{
     text-decoration: none;
+}
+
+#SudipBlogsFirstTitle{
     color: var(--text-color);
+}
+
+.navHyperLinks abbr{
+    color: var(--greyclr);
 }
 
 #SudipBlogsFirstTitle{
@@ -50,7 +71,7 @@ nav{
 #SudipBlogsFirstTitle::before{
     content: 'Sudip';
     font-weight: normal;
-
+    color: var(--greyclr);
 }
 
 .navHyperLinks a:hover{
@@ -58,7 +79,7 @@ nav{
 }
 
 .navHyperLinks a{
-    color: var(--text-color);
+    color: var(--greyclr);
 }
 
 .searchDarkModeToggleBtn {
@@ -69,12 +90,13 @@ nav{
 .search-bar-box{
     border: transparent;
     background-color: var(--navbar-color);
+    max-width: 200px;
     padding: 8px 12px;
+    padding-right: 25px;
     border-radius: 5px;
 }
 
 .search-bar-box:focus{
-    background-color: rgba(0, 162, 255,0.2);
     outline: none;
 }
 
@@ -83,6 +105,32 @@ nav{
     top: 8px;
     right: 57px;
     cursor: pointer;
+}
+
+/* search recomendation */
+.searchRecomendationBox{
+    position: absolute;
+    max-height: 165px;
+    width:200px;
+    overflow-y: auto;
+    /* overflow-x: scroll; */
+    scrollbar-width: none;
+}
+.searchRecomendationBox ul{
+    background-color: white;
+    border-top:1px solid rgb(161, 161, 161);
+    padding: 10px 10px;
+    width:400px;
+}
+.searchRecomendationBox>ul li{
+    list-style: none;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.searchRecomendationBox>ul li:hover{
+    background-color: var(--searchBoxclr);
+    border-radius: 5px;
 }
 
 #lightdarktogglebtn{
@@ -125,7 +173,7 @@ nav{
 /* Media query for phone */
 @media screen and (max-width:850px){
     .navHyperLinks{
-        background-color: var(--navbar-color);
+        background-color: var(--hamburger-color);
         flex-direction: column;
         position: fixed;
         right: -300px;
@@ -164,6 +212,14 @@ nav{
         width: 92vw;
         opacity: 0;
         transition: top 0.2s ease-in-out,opacity 0.3s ease-in-out;
+        padding: 8px 12px;
+
+    }
+
+    .searchRecomendationBox{
+        position: absolute;
+        top: 91px;
+        right: 0px;
     }
 
     .search-bar-box.active{
@@ -173,7 +229,6 @@ nav{
     }
 
     .searchbar input:focus{
-        background-color: var(--navbar-color);
         outline: none;
     }
 
