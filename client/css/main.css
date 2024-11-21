@@ -1,0 +1,384 @@
+:root {
+    --text-color: black;
+    --text-color-two: black;
+    --navbar-color: rgb(236, 236, 236);
+    --fontfamily: "Lato", sans-serif;
+    --writeraboutpfp: 50px;
+    --width: 1180px;
+    --social-links-size: 22px;
+    --abtwrite: rgb(240, 240, 240);
+    --blog-border-clr: rgb(192, 191, 191);
+    --text-decor-underline: rgb(29, 105, 247);
+    --submitClr: white;
+    --input-clr: white;
+    --filter-btn-clr:rgb(236, 236, 236);
+    --filter-btn-hoverclr:rgb(219, 219, 219);
+    --filter-btn-focus:1px rgb(56, 56, 56) solid;
+}
+
+.darkmodemain {
+    --text-color: white;
+    --abtwrite: rgba(83, 83, 83, 0.2);
+    --text-color-two: rgb(202, 202, 202);
+    --blog-border-clr: rgba(83, 83, 83, 0.2);
+    --submitClr: black;
+    --input-clr: rgba(202, 202, 202, .3);
+    --filter-btn-clr:rgb(33, 104, 236);
+    --filter-btn-hoverclr:rgb(0, 38, 255);
+    --filter-btn-focus:3px rgb(17, 33, 134) solid;
+}
+
+/* About writer section  */
+.aboutWriter {
+    max-width: var(--width);
+    background-color: var(--abtwrite);
+    min-height: 250px;
+    gap: 22px;
+    border-radius: 10px;
+    padding: 25px 0px;
+}
+
+.writerAboutPara {
+    max-width: 500px;
+    text-align: center;
+}
+
+.nameTitle>h2 {
+    color: var(--text-color);
+}
+
+.nameTitle p {
+    color: var(--text-color-two);
+}
+
+.writerAboutPara>p {
+    color: var(--text-color-two);
+}
+
+.writerPfpName {
+    gap: 10px;
+}
+
+#writeraboutpfp {
+    height: var(--writeraboutpfp);
+    border-radius: 50%;
+}
+
+.socialLinks {
+    gap: 20px;
+}
+
+#follow-btn {
+    padding: 6px 8px;
+    cursor: pointer;
+    border: 1px solid rgb(216, 216, 216);
+    background-color: white;
+    border-radius: 5px;
+}
+
+#follow-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgb(194, 194, 194);
+}
+
+#github-logo,
+#likedin-logo,
+#x-logo,
+#insta-logo {
+    height: var(--social-links-size);
+    transition: transform 0.5s ease-in-out;
+}
+
+#github-logo {
+    height: 25px;
+}
+
+#github-logo:hover,
+#likedin-logo:hover,
+#x-logo:hover,
+#insta-logo:hover {
+    transform: scale(1.1);
+}
+
+/* About writer section  */
+
+/* Blog Container */
+.container {
+    padding: 0px 10px;
+}
+
+.blogLatestPostContainer {
+    max-width: 1180px;
+}
+
+.LatestPostContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+#latestPostTxt{
+    color: var(--text-color-two);
+    margin: 20px 0px;
+}
+
+.filter{
+    margin:10px 0px;
+    gap: 15px;
+}
+
+.filterBtn{
+    padding: 10px 15px;
+    border: transparent;
+    border-radius:20px ;
+    cursor: pointer;
+    background-color: var(--filter-btn-clr);
+    color: var(--text-color-two);
+}
+
+.filterBtn:hover{
+    background-color: var(--filter-btn-hoverclr);
+}
+
+.filterBtn:focus{
+    outline: var(--filter-btn-focus);
+}
+
+.blogPostLatestCard {
+    min-height: 360px;
+    padding: 10px 10px;
+    border: 1px solid var(--blog-border-clr);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#blogImgContainer {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+#stockBlogPic {
+    border-radius: 12px;
+    width: 100%;
+    height: 180px;
+    transition: transform 0.5s ease-in-out;
+}
+
+#stockBlogPic:hover {
+    transform: scale(1.05);
+}
+
+.blogPostLatestAbout {
+    height: 160px;
+}
+
+#LatestPoststatsImg {
+    height: 25px;
+    border-radius: 50%;
+}
+
+.LatestPoststatsImgwriter {
+    gap: 5px;
+}
+
+.LatestPoststats p {
+    font-size: 0.9rem;
+}
+
+#tags {
+    font-size: 0.75rem;
+    color: var(--text-color-two);
+}
+
+#blogdesc {
+    margin-bottom: 6px;
+    font-weight: normal;
+    color: var(--text-color-two);
+}
+
+#blogTitle {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+#LatestPoststatswriter,
+#dateMonth {
+    color: var(--text-color-two);
+}
+
+/* Blog Container */
+
+/* contact us part */
+.contactContainer {
+    max-width: var(--width);
+    margin-inline: auto;
+    height: 82vh;
+    justify-content: space-around;
+}
+
+#contactHeading {
+    color: var(--text-color);
+    width: 300px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+#labelOfNameInCont,
+#labelOfEmailInCont,
+#labelForMessageInCont {
+    color: var(--text-color-two);
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.contactForm {
+    gap: 20px;
+}
+
+.nameEmail {
+    justify-content: center;
+    gap: 3rem;
+}
+
+.nameEmail input {
+    border-radius: 12px;
+    width: 18rem;
+    height: 3.5rem;
+    padding-left: 15px;
+    border: var(--blog-border-clr) solid 1px;
+    font-size: 20px;
+    background-color: var(--input-clr);
+}
+
+#contactFormMessage {
+    border-radius: 12px;
+    padding-left: 15px;
+    border: var(--blog-border-clr) solid 1px;
+    font-size: 20px;
+    width: 39rem;
+    height: 12rem;
+    padding-top: 30px;
+    background-color: var(--input-clr);
+}
+
+#submitBtnForContactForm {
+    color: var(--submitClr);
+    background-color: var(--text-color-two);
+    height: 3.5rem;
+    width: 8.5rem;
+    border-radius: 35px;
+    border: transparent;
+    font-size: 1.4rem;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#nameOfnameEmail::placeholder,
+#emailOfnameEmail::placeholder,
+#contactFormMessage::placeholder {
+    color: var(--text-color-two);
+}
+
+/* contact us part */
+
+/* For individual Blog */
+.specificBlogContainer{
+    max-width: 700px;
+    margin-inline: auto;
+    gap: 20px;
+    padding: 10px;
+}
+
+#specificBlogHeadingOne,#specificBlogHeadingTwo,#specificBlogHeadingThree,#specificBlogHeadingFour,#specificBlogHeadingFive,#specificBlogHeadingSix{
+    color: var(--text-color);
+}
+
+#specificBlogHeadingTwo,#specificBlogHeadingThree,#specificBlogHeadingFour,#specificBlogHeadingFive,#specificBlogHeadingSix{
+    font-size: 1.5rem;
+}
+
+.specificBlogPara{
+    color: var(--text-color-two);
+}
+
+.specificBlogContainer img{
+    max-height: 350px;
+}
+/* For individual Blog */
+
+/* Footer */
+.footerContainer {
+    max-width: var(--width);
+    display: flex;
+    gap: 40px;
+    margin-inline: auto;
+    padding: 20px 0px;
+    align-items: center;
+}
+
+.footerContainer a,
+p,
+abbr {
+    font-size: 1.2rem;
+    color: var(--text-color-two);
+    text-decoration: none;
+}
+
+.footerContainer a:hover,
+.footerContainer p:hover {
+    text-decoration: underline var(--text-decor-underline);
+}
+
+/* Footer */
+
+/* Media query for phone */
+@media screen and (max-width:680px) {
+    .nameEmail {
+        gap: 20px;
+    }
+
+    .nameEmail input {
+        width: 15rem;
+    }
+
+    #contactFormMessage {
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .writerAboutPara {
+        padding: 0px 10px;
+    }
+
+    .writerAboutPara p {
+        font-size: 1rem;
+    }
+
+    .footerContainer {
+        gap: 25px;
+    }
+
+    .footerContainer a,
+    p,
+    abbr {
+        font-size: 1rem;
+    }
+
+    .nameEmail {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nameEmail input {
+        width: 20rem;
+        height: 3rem;
+    }
+
+    #contactFormMessage {
+        width: 20rem;
+        height: 10rem;
+    }
+}

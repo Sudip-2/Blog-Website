@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root{
+--mainlogosize:45px;
+--lightdarktogglebtnSize:30px;
+--searchlogoSize:15px;
+--text-color:black;
+--navbar-color:rgb(236, 236, 236);
+--fontfamily:"Fredoka", sans-serif;
+--searchBoxclr:rgba(0, 162, 255,0.2);
+--greyclr:black;
+--hamburger-color:rgb(236, 236, 236);
+--navbar-active-clr:rgb(201, 242, 255);
+
+}
+
+body {
+    font-family: var(--fontfamily);
+}
+
+.darkmode{
+    background-color: rgba(6, 6, 24, 0.9);
+    --text-color: white;
+    --greyclr:rgb(202, 202, 202);
+    --navbar-color:rgba(83, 83, 83, 0.2);
+    --hamburger-color:rgb(46, 46, 46);
+    --navbar-active-clr:rgb(18, 13, 43);
+}
+
+.navContainer{
+    padding: 20px 10px;
+    position: sticky;
+    top: 0;
+    transition: background-color 0.3s ;
+    z-index: 1;
+    margin-bottom: 5px;
+}
+
+.navContainer.active{
+    background-color: var(--navbar-active-clr);
+}
+
+nav{
+    max-width: 1180px;
+}
+
+.navHyperLinks{
+    gap: 35px;
+}
+
+.navHyperLinks li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+#SudipBlogsFirstTitle{
+    color: var(--text-color);
+}
+
+.navHyperLinks abbr{
+    color: var(--greyclr);
+}
+
+#SudipBlogsFirstTitle{
+    font-size: 1.4rem;
+}
+
+#SudipBlogsFirstTitle::before{
+    content: 'Sudip';
+    font-weight: normal;
+    color: var(--greyclr);
+}
+
+.navHyperLinks a:hover{
+    text-decoration: underline rgb(29, 105, 247);
+}
+
+.navHyperLinks a{
+    color: var(--greyclr);
+}
+
+.searchDarkModeToggleBtn {
+    position: relative;
+    gap: 20px;
+}
+
+.search-bar-box{
+    border: transparent;
+    background-color: var(--navbar-color);
+    max-width: 200px;
+    padding: 8px 12px;
+    padding-right: 25px;
+    border-radius: 5px;
+    color: var(--greyclr);
+}
+
+.search-bar-box:focus{
+    outline: none;
+}
+
+#searchlogo{
+    position:absolute ;
+    top: 8px;
+    right: 57px;
+    cursor: pointer;
+}
+
+/* search recomendation */
+.searchRecomendationBox{
+    position: absolute;
+    max-height: 165px;
+    width:200px;
+    overflow-y: auto;
+    /* overflow-x: scroll; */
+    scrollbar-width: none;
+}
+.searchRecomendationBox ul{
+    background-color: var(--hamburger-color);
+    border-top:1px solid rgb(161, 161, 161);
+    padding: 10px 10px;
+    width:400px;
+}
+.searchRecomendationBox>ul li{
+    list-style: none;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color:var(--greyclr) ;
+}
+
+.searchRecomendationBox>ul li:hover{
+    background-color: var(--searchBoxclr);
+    border-radius: 5px;
+}
+
+#lightdarktogglebtn{
+    cursor: pointer;
+}
+
+
+#SudipBlogsTitle{
+    margin-left:5px ;
+}
+
+#main-logo{
+    height: var(--mainlogosize);
+    border-radius: 50%;
+}
+
+#lightdarktogglebtn{
+    height: var(--lightdarktogglebtnSize);
+}
+
+#searchlogo{
+    height: var(--searchlogoSize);
+}
+
+.spanForNav {
+    flex-direction: column;
+    gap: 3px;
+    cursor: pointer;
+    display: none;
+}
+
+.spanForNav span {
+    height: 4px;
+    width: 25px;
+    background-color: rgb(58, 137, 255);
+    border-radius: 10px;
+}
+
+
+/* Media query for phone */
+@media screen and (max-width:850px){
+    .navHyperLinks{
+        background-color: var(--hamburger-color);
+        flex-direction: column;
+        position: fixed;
+        right: -300px;
+        top: 85px;
+        width: 250px;
+        height: 100svh;
+        padding-top:50px ;
+        transition: right 0.5s ease-in-out;
+        box-shadow: -4px 0 4px -2px rgba(8, 8, 8, 0.3);
+    }
+
+    .navHyperLinks.active{
+        right: 0px;
+    }
+
+    .navHyperLinks a:hover{
+        text-decoration: none;
+    }
+
+    .spanForNav {
+        display: flex;
+    }
+
+    #searchlogo{
+        right: 100px;
+    }
+
+}
+
+@media screen and (max-width:550px){
+    .search-bar-box{
+        border: 1px solid grey;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 92vw;
+        opacity: 0;
+        transition: top 0.2s ease-in-out,opacity 0.3s ease-in-out;
+        padding: 8px 12px;
+
+    }
+
+    .searchRecomendationBox{
+        position: absolute;
+        top: 91px;
+        right: 0px;
+    }
+
+    .search-bar-box.active{
+        opacity: 1;
+        display: flex;
+        top: 57px;
+    }
+
+    .searchbar input:focus{
+        outline: none;
+    }
+
+    #searchlogo{
+        height: 20px;
+        top: 5px;
+    }
+}

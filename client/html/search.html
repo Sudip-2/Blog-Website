@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudip Blogs</title>
+    <link rel="stylesheet" href="../css/utility.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="shortcut icon" href="../images/sudip.jpg" type="jpg">
+</head>
+
+<body>
+    <div class="navContainer ">
+        <nav class=" flex j-spacebetween a-center m-inline ">
+            <div class="logoText flex a-center">
+                <img src="../images/logo.jpg" alt="main logo" id="main-logo">
+                <abbr title="Sudip Blogs home" id="SudipBlogsTitle">
+                    <a href="./index.html">
+                        <h2 id="SudipBlogsFirstTitle">Blogs</h2>
+                    </a>
+                </abbr>
+            </div>
+            <div class="navHyperLinks flex a-center ">
+                <abbr title="Home">
+                    <li><a href="./index.html">Home</a></li>
+                </abbr>
+                <abbr title="Contact">
+                    <li><a href="./contact.html">Contact</a></li>
+                </abbr>
+                <abbr title="LikedIn">
+                    <li><a href="https://www.linkedin.com/in/sudip-paul18/" target="_blank">LikedIn</a></li>
+                </abbr>
+                <abbr title="All blogs">
+                    <li><a href="./allblogs.html">All blogs</a></li>
+                </abbr>
+            </div>
+            <div class="searchDarkModeToggleBtn flex a-center ">
+                <div class="searchbar ">
+                    <abbr title="search bar"><input type="text" placeholder="Search" class="search-bar-box "></abbr>
+                    <img src="../images/search.png" alt="searchlogo" id="searchlogo">
+                    <div class="searchRecomendationBox">
+
+                    </div>
+                </div>
+                <img src="../images/lightdark.png" alt="light dark toggle button" id="lightdarktogglebtn">
+                <div class="spanForNav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar -->
+
+    <!-- Footer section -->
+    <div class="container">
+        <main>
+            <!-- Blog post section -->
+            <div class="blogLatestPostContainer m-inline ">
+                <h3 id="latestPostTxt">Search Results</h3>
+
+                <div class="LatestPostContainer">
+
+                </div>
+                </div>
+                    <template class="blogCards">
+                        <div class="blogPostLatestCard">
+                            <div id="blogImgContainer">
+                                <img src="../images/stock.png" alt="" id="stockBlogPic">  
+                            </div>
+    
+                            <div class="blogPostLatestAbout flex flex-dir-c j-spaceeven">
+                                <h4 id="tags">Technology</h4>
+                                <h3 id="blogTitle">Lorem ipsum dolor sit amet consectetur elit.
+                                </h3>
+                                <h4 id="blogdesc">Lorem ipsum dolor sit amet conse adpisicing elit. Possimus saepe ut excepturi.
+                                </h4>
+                                <div class="LatestPoststats flex j-spacebetween a-center">
+                                    <div class="LatestPoststatsImgwriter flex a-center">
+                                        <img src="../images/sudip.jpg" alt="writer image" id="LatestPoststatsImg">
+                                        <h4 id="LatestPoststatswriter">Sudip Paul</h4>
+                                    </div>
+                                    <p id="dateMonth">August 20, 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+        </main>
+        <!-- Blog post section -->
+
+        <!-- Footer section -->
+        <footer class="footerContainer">
+                <abbr title="Date"><p>&copy; 2024</p></abbr>
+                <a href="https://www.linkedin.com/in/sudip-paul18/" target="_blank">LinkedIn</a>
+                <a href="https://x.com/gm_sudip" target="_blank">X</a>
+                <a href="mailto:p452570@gmail.com" target="_blank">Email</a>
+                <a href="https://sudip-2.github.io/portfolio-project-sudip/" target="_blank">Portfolio</a>
+        </footer>
+        <!-- Footer section -->
+    </div>
+    <!-- Footer section -->
+</body>
+<script src="../javascript/nav.js"></script>
+<script>
+    window.addEventListener('load',async() => {
+        let title = new URLSearchParams(window.location.search)
+        let selectedBlogTitle = title.get('title');
+        const response = await fetch(`https://personal-blog-site-sable.vercel.app/blogs/onclick/${selectedBlogTitle}`)
+        const data = await response.json()
+        bindSpecificBlogs(data)
+    })
+    function bindSpecificBlogs(Blogs) {
+    const blogContainer = document.querySelector('.LatestPostContainer')
+    const blogTemplate = document.querySelector('.blogCards')
+    blogContainer.innerHTML = ''
+    if (!Blogs.pic) return
+    const clone = blogTemplate.content.cloneNode(true)
+    fillData(Blogs, clone)
+    blogContainer.appendChild(clone)
+}
+
+function fillData(blogs, clone) {
+    let image = clone.querySelector('#stockBlogPic')
+    let title = clone.querySelector('#blogTitle')
+    // let publisherName = clone.querySelector('#LatestPoststatswriter')
+    let tags = clone.querySelector('#tags')
+    let description = clone.querySelector('#blogdesc')
+    let dateMonth = clone.querySelector('#dateMonth')
+    const date = new Date(blogs.date).toLocaleDateString("en-US", {
+        timeZone: "Asia/Jakarta"
+    })
+    image.src = blogs.pic
+    tags.innerHTML = blogs.tag
+    // publisherName.innerHTML = blogs.author
+    title.innerHTML = `${blogs.title.substring(0, 80)}...`
+    description.innerHTML = `${blogs.desc.substring(0, 100)}...`
+    dateMonth.innerHTML = `${date}`
+    clone.firstElementChild.addEventListener("click", async () => {
+        window.open(`../html/blog.html?title=${blogs.title}`, "_blank");
+    })
+}
+</script>
+</html>

@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.border{
+    border: 1px solid;
+}
+.flex{
+    display: flex;
+}
+.j-center{
+    justify-content: center;
+}
+.a-center{
+    align-items: center;
+}
+.flex-dir-c{
+    flex-direction: column;
+}
+.j-spacebetween{
+    justify-content:space-between;
+}
+.j-spacearound{
+    justify-content: space-around;
+}
+.j-spaceeven{
+    justify-content: space-evenly;
+}
+.j-end{
+    justify-content: end;
+}
+.m-inline{
+    margin-inline: auto;
+}

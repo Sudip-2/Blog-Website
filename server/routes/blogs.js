@@ -30,11 +30,11 @@ router.get('/filter',async(req,res) => {
             res.send(blogs)
         }
         if(filterText == 'tech'){
-            let blogs = await blog.find({tag:'Backend'})
+            let blogs = await blog.find({tag:'tech'})
             res.send(blogs)
         }
         if(filterText == 'lifestyle'){
-            let blogs = await blog.find({tag:'Web Development'})
+            let blogs = await blog.find({tag:'lifestyle'})
             res.send(blogs)
         }
     }

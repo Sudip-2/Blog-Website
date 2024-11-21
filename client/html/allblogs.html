@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Blogs</title>
+    <link rel="stylesheet" href="../css/utility.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="shortcut icon" href="../images/sudip.jpg" type="jpg">
+</head>
+<body class="">
+    <!-- Navbar -->
+    <div class="navContainer ">
+        <nav class=" flex j-spacebetween a-center m-inline ">
+        <div class="logoText flex a-center">
+            <img src="../images/logo.jpg" alt="main logo" id="main-logo">
+            <abbr title="Sudip Blogs home" id="SudipBlogsTitle">
+                <a href="./index.html"><h2 id="SudipBlogsFirstTitle">Blogs</h2></a>
+            </abbr>
+        </div>
+        <div class="navHyperLinks flex a-center ">
+            <abbr title="Home">
+                <li><a href="./index.html">Home</a></li>
+            </abbr>
+            <abbr title="Contact">
+                <li><a href="./contact.html">Contact</a></li>
+            </abbr>
+            <abbr title="LikedIn">
+                <li><a href="https://www.linkedin.com/in/sudip-paul18/" target="_blank">LikedIn</a></li>
+            </abbr>
+            <abbr title="All blogs">
+                <li><a href="./allblogs.html">All blogs</a></li>
+            </abbr>
+        </div>
+        <div class="searchDarkModeToggleBtn flex a-center ">
+            <div class="searchbar ">
+                <abbr title="search bar"><input type="text" placeholder="Search" class="search-bar-box "></abbr>
+                <img src="../images/search.png" alt="searchlogo" id="searchlogo">
+                <div class="searchRecomendationBox">
+                    
+                </div>
+            </div>
+            <img src="../images/lightdark.png" alt="light dark toggle button" id="lightdarktogglebtn">
+            <div class="spanForNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+     </div>
+    <!-- Navbar -->
+
+    <!-- All blogs -->
+    <div class="container">
+        <main>
+            <!-- Blog post section -->
+            <div class="blogLatestPostContainer m-inline">
+                <div class="filter flex j-end">
+                    <button class="filterBtn" id="btnOne">From Newest</button>
+                    <button class="filterBtn" id="btnTwo">From Oldest</button>
+                    <button class="filterBtn" id="btnThree">Tech</button>
+                    <button class="filterBtn" id="btnFour">Lifestyle</button>
+                </div>
+
+                <div class="LatestPostContainer">
+
+                </div>
+                </div>
+                    <template class="blogCards">
+                        <div class="blogPostLatestCard">
+                            <div id="blogImgContainer">
+                                <img src="../images/stock.png" alt="" id="stockBlogPic">  
+                            </div>
+    
+                            <div class="blogPostLatestAbout flex flex-dir-c j-spaceeven">
+                                <h4 id="tags">Technology</h4>
+                                <h3 id="blogTitle">Lorem ipsum dolor sit amet consectetur elit.
+                                </h3>
+                                <h4 id="blogdesc">Lorem ipsum dolor sit amet conse adpisicing elit. Possimus saepe ut excepturi.
+                                </h4>
+                                <div class="LatestPoststats flex j-spacebetween a-center">
+                                    <div class="LatestPoststatsImgwriter flex a-center">
+                                        <img src="../images/sudip.jpg" alt="writer image" id="LatestPoststatsImg">
+                                        <h4 id="LatestPoststatswriter">Sudip Paul</h4>
+                                    </div>
+                                    <p id="dateMonth">August 20, 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+        </main>
+        <!-- Blog post section -->
+
+        <!-- Footer section -->
+        <footer class="footerContainer">
+                <abbr title="Date"><p>&copy; 2024</p></abbr>
+                <a href="https://www.linkedin.com/in/sudip-paul18/" target="_blank">LinkedIn</a>
+                <a href="https://x.com/gm_sudip" target="_blank">X</a>
+                <a href="mailto:p452570@gmail.com" target="_blank">Email</a>
+                <a href="https://sudip-2.github.io/portfolio-project-sudip/" target="_blank">Portfolio</a>
+        </footer>
+        <!-- Footer section -->
+    </div>
+</body>
+<script src="../javascript/nav.js"></script>
+<script src="../javascript/blogloading.js"></script>
+<script src="../javascript/filter.js"></script>
+</html>
