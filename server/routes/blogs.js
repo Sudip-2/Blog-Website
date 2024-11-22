@@ -43,8 +43,8 @@ router.get('/filter',async(req,res) => {
     }
 })
 
-router.get('/onclick/:title',async(req,res) => {
-    let id = decodeURIComponent(req.params.title)
+router.get('/onclick',async(req,res) => {
+    let id = req.query.title
     let specificBlog = await blog.findOne({title:id})
     console.log(id)
     console.log(specificBlog)
