@@ -45,7 +45,7 @@ router.get('/filter',async(req,res) => {
 
 router.get('/onclick/:title',async(req,res) => {
     let id = req.params.title
-    let specificBlog = await blog.findOne({title:id})
+    let specificBlog = await blog.find({title:{$regex:id,$options:'i'}})
     console.log(id)
     res.send(specificBlog)
 })

@@ -65,39 +65,41 @@
                 <div class="LatestPostContainer">
 
                 </div>
-                </div>
-                    <template class="blogCards">
-                        <div class="blogPostLatestCard">
-                            <div id="blogImgContainer">
-                                <img src="../images/stock.png" alt="" id="stockBlogPic">  
+            </div>
+            <template class="blogCards">
+                <div class="blogPostLatestCard">
+                    <div id="blogImgContainer">
+                        <img src="../images/stock.png" alt="" id="stockBlogPic">
+                    </div>
+
+                    <div class="blogPostLatestAbout flex flex-dir-c j-spaceeven">
+                        <h4 id="tags">Technology</h4>
+                        <h3 id="blogTitle">Lorem ipsum dolor sit amet consectetur elit.
+                        </h3>
+                        <h4 id="blogdesc">Lorem ipsum dolor sit amet conse adpisicing elit. Possimus saepe ut excepturi.
+                        </h4>
+                        <div class="LatestPoststats flex j-spacebetween a-center">
+                            <div class="LatestPoststatsImgwriter flex a-center">
+                                <img src="../images/sudip.jpg" alt="writer image" id="LatestPoststatsImg">
+                                <h4 id="LatestPoststatswriter">Sudip Paul</h4>
                             </div>
-    
-                            <div class="blogPostLatestAbout flex flex-dir-c j-spaceeven">
-                                <h4 id="tags">Technology</h4>
-                                <h3 id="blogTitle">Lorem ipsum dolor sit amet consectetur elit.
-                                </h3>
-                                <h4 id="blogdesc">Lorem ipsum dolor sit amet conse adpisicing elit. Possimus saepe ut excepturi.
-                                </h4>
-                                <div class="LatestPoststats flex j-spacebetween a-center">
-                                    <div class="LatestPoststatsImgwriter flex a-center">
-                                        <img src="../images/sudip.jpg" alt="writer image" id="LatestPoststatsImg">
-                                        <h4 id="LatestPoststatswriter">Sudip Paul</h4>
-                                    </div>
-                                    <p id="dateMonth">August 20, 2024</p>
-                                </div>
-                            </div>
+                            <p id="dateMonth">August 20, 2024</p>
                         </div>
-                    </template>
+                    </div>
+                </div>
+            </template>
         </main>
         <!-- Blog post section -->
 
         <!-- Footer section -->
         <footer class="footerContainer">
-                <abbr title="Date"><p>&copy; 2024</p></abbr>
-                <a href="https://www.linkedin.com/in/sudip-paul18/" target="_blank">LinkedIn</a>
-                <a href="https://x.com/gm_sudip" target="_blank">X</a>
-                <a href="mailto:p452570@gmail.com" target="_blank">Email</a>
-                <a href="https://sudip-2.github.io/portfolio-project-sudip/" target="_blank">Portfolio</a>
+            <abbr title="Date">
+                <p>&copy; 2024</p>
+            </abbr>
+            <a href="https://www.linkedin.com/in/sudip-paul18/" target="_blank">LinkedIn</a>
+            <a href="https://x.com/gm_sudip" target="_blank">X</a>
+            <a href="mailto:p452570@gmail.com" target="_blank">Email</a>
+            <a href="https://sudip-2.github.io/portfolio-project-sudip/" target="_blank">Portfolio</a>
         </footer>
         <!-- Footer section -->
     </div>
@@ -105,7 +107,7 @@
 </body>
 <script src="../javascript/nav.js"></script>
 <script>
-    window.addEventListener('load',async() => {
+    window.addEventListener('load', async () => {
         let title = new URLSearchParams(window.location.search)
         let selectedBlogTitle = title.get('title');
         const response = await fetch(`https://personal-blog-site-sable.vercel.app/blogs/onclick/${selectedBlogTitle}`)
@@ -113,34 +115,37 @@
         bindSpecificBlogs(data)
     })
     function bindSpecificBlogs(Blogs) {
-    const blogContainer = document.querySelector('.LatestPostContainer')
-    const blogTemplate = document.querySelector('.blogCards')
-    blogContainer.innerHTML = ''
-    if (!Blogs.pic) return
-    const clone = blogTemplate.content.cloneNode(true)
-    fillData(Blogs, clone)
-    blogContainer.appendChild(clone)
-}
+        const blogContainer = document.querySelector('.LatestPostContainer')
+        const blogTemplate = document.querySelector('.blogCards')
+        blogContainer.innerHTML = ''
+        Blogs.forEach(element => {
+            if (!element.pic) return
+            const clone = blogTemplate.content.cloneNode(true)
+            fillData(element, clone)
+            blogContainer.appendChild(clone)
+        });
+    }
 
-function fillData(blogs, clone) {
-    let image = clone.querySelector('#stockBlogPic')
-    let title = clone.querySelector('#blogTitle')
-    // let publisherName = clone.querySelector('#LatestPoststatswriter')
-    let tags = clone.querySelector('#tags')
-    let description = clone.querySelector('#blogdesc')
-    let dateMonth = clone.querySelector('#dateMonth')
-    const date = new Date(blogs.date).toLocaleDateString("en-US", {
-        timeZone: "Asia/Jakarta"
-    })
-    image.src = blogs.pic
-    tags.innerHTML = blogs.tag
-    // publisherName.innerHTML = blogs.author
-    title.innerHTML = `${blogs.title.substring(0, 80)}...`
-    description.innerHTML = `${blogs.desc.substring(0, 100)}...`
-    dateMonth.innerHTML = `${date}`
-    clone.firstElementChild.addEventListener("click", async () => {
-        window.open(`../html/blog.html?title=${blogs.title}`, "_blank");
-    })
-}
+    function fillData(blogs, clone) {
+        let image = clone.querySelector('#stockBlogPic')
+        let title = clone.querySelector('#blogTitle')
+        // let publisherName = clone.querySelector('#LatestPoststatswriter')
+        let tags = clone.querySelector('#tags')
+        let description = clone.querySelector('#blogdesc')
+        let dateMonth = clone.querySelector('#dateMonth')
+        const date = new Date(blogs.date).toLocaleDateString("en-US", {
+            timeZone: "Asia/Jakarta"
+        })
+        image.src = blogs.pic
+        tags.innerHTML = blogs.tag
+        // publisherName.innerHTML = blogs.author
+        title.innerHTML = `${blogs.title.substring(0, 80)}...`
+        description.innerHTML = `${blogs.desc.substring(0, 100)}...`
+        dateMonth.innerHTML = `${date}`
+        clone.firstElementChild.addEventListener("click", async () => {
+            window.open(`../html/blog.html?title=${blogs.title}`, "_blank");
+        })
+    }
 </script>
+
 </html>
