@@ -44,9 +44,10 @@ router.get('/filter',async(req,res) => {
 })
 
 router.get('/onclick/:title',async(req,res) => {
-    let id = req.params.title
+    let id = decodeURIComponent(req.params.title)
     let specificBlog = await blog.findOne({title:id})
     console.log(id)
+    console.log(specificBlog)
     res.send(specificBlog)
 })
 
