@@ -1,8 +1,0 @@
-{
-    "rewrites": [
-      { "source": "/css/:path*", "destination": "/client/css/:path*" },
-      { "source": "/images/:path*", "destination": "/client/images/:path*" },
-      { "source": "/javascript/:path*", "destination": "/client/javascript/:path*" },
-      { "source": "/html/:path*", "destination": "/client/html/:path*" }
-    ]
-  }

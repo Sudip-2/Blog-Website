@@ -1,4 +1,5 @@
 // nav solid on scroll
+let api_Url = "https://personal-blog-site-zeta.vercel.app/"
 let container = document.body.querySelector('.container')
 let nav = document.querySelector('.navContainer')
 window.addEventListener('scroll', () => {
@@ -67,7 +68,7 @@ hamburgerLogo.addEventListener('click', () => {
 let suggestionBox = document.querySelector('.searchRecomendationBox')
 
 searchbarinput.addEventListener('keyup', async () => {
-    let keywordOfBlogs = await fetch('https://personal-blog-site-sable.vercel.app/blogs/title')
+    let keywordOfBlogs = await fetch(`${api_Url}blogs/title`)
     let availKeywords = await keywordOfBlogs.json()
     let titles = availKeywords.map(item => item.title);
     let result = []

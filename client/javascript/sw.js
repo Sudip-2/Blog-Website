@@ -1,4 +1,5 @@
 // Public Key:
+let personalApiUrl = "https://personal-blog-site-zeta.vercel.app/"
 const publicKey = "BMfrE1Hs_o8ZLdb8YUYu6aDk7Hq259HEOUNg7nj6rt1mKyRazcerRHAAM70gQOGN-bR0v6OXZJ7YXQTN3DmDXvA"
 
 const urlBase64ToUint8Array = base64String => {
@@ -18,7 +19,7 @@ const urlBase64ToUint8Array = base64String => {
 }
 
 const savesubscription = async (subscription) => {
-    const response = await fetch('https://personal-blog-site-sable.vercel.app/notify/save-subscription',{
+    const response = await fetch(`${personalApiUrl}notify/save-subscription`,{
         method:'post',
         headers: {
             "Content-Type": "application/json",

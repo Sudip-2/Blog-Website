@@ -2,6 +2,7 @@ let btnOne = document.querySelector('#btnOne')
 let btnTwo = document.querySelector('#btnTwo')
 let btnThree = document.querySelector('#btnThree')
 let btnFour = document.querySelector('#btnFour')
+let apiurl = "https://personal-blog-site-zeta.vercel.app/"
 
 btnOne.addEventListener('click',async(e) => {
     let blogs = await filterBlogFetch(e.target.textContent.toLowerCase())
@@ -24,7 +25,7 @@ btnFour.addEventListener('click',async(e) => {
 })
 
 async function filterBlogFetch (textContent){
-    let filteredBlogs = await fetch(`https://personal-blog-site-sable.vercel.app/blogs/filter?filter=${textContent}`)
+    let filteredBlogs = await fetch(`${apiurl}blogs/filter?filter=${textContent}`)
     return filteredBlogs.json()
 }
 

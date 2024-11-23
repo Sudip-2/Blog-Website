@@ -1,3 +1,4 @@
+let url = "https://personal-blog-site-zeta.vercel.app/"
 let submitbtn = document.getElementById('submitBtnForContactForm')
 submitbtn.addEventListener('click',() => {
     let fullName = document.getElementById('nameOfnameEmail')
@@ -8,7 +9,7 @@ submitbtn.addEventListener('click',() => {
         email:email.value,
         message:message.value
     }
-    fetch('https://personal-blog-site-sable.vercel.app/mail/sendmail',{
+    fetch(`${url}mail/sendmail`,{
         method:'post',
         headers:{
             "Content-Type":"application/json"

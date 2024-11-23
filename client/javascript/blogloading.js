@@ -1,10 +1,11 @@
 // Blog on loading page
+let apiUrl = "https://personal-blog-site-zeta.vercel.app/"
 window.addEventListener('load', () => {
     fetchBlogs()
 })
 
 async function fetchBlogs() {
-    let response = await fetch('https://personal-blog-site-sable.vercel.app/blogs/latest')
+    let response = await fetch(`${apiUrl}blogs/latest`)
     let latestBlogs = await response.json()
     bindBlogs(latestBlogs)
 }

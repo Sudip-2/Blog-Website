@@ -1,11 +1,12 @@
 // getting the title using query params
 const urlParams = new URLSearchParams(window.location.search);
 const blogTitle = urlParams.get('title');
+let urlApi = "https://personal-blog-site-zeta.vercel.app/"
 console.log(blogTitle)
 
 // getting the blog by url
 async function specifiedBlog() {
-    let blogdata = await fetch(`https://personal-blog-site-sable.vercel.app/blogs/onclick?title=${blogTitle}`)
+    let blogdata = await fetch(`${urlApi}blogs/onclick?title=${blogTitle}`)
     let data = await blogdata.json()
     dataInserting(data)
     console.log(data)
