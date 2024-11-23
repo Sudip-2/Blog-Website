@@ -5,7 +5,7 @@ console.log(blogTitle)
 
 // getting the blog by url
 async function specifiedBlog() {
-    let blogdata = await fetch(`https://personal-blog-site-sable.vercel.app/onclick?title=${blogTitle}`)
+    let blogdata = await fetch(`https://personal-blog-site-sable.vercel.app/blogs/onclick?title=${blogTitle}`)
     let data = await blogdata.json()
     dataInserting(data)
     console.log(data)
