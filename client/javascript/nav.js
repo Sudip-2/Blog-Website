@@ -116,3 +116,16 @@ window.addEventListener('keydown', (e) => {
         }
     }
 })
+
+if(window.location.pathname.includes("index.html")){
+    let home = document.getElementById('navHome')
+    home.classList.add('navActiveOnPage')
+}
+if(window.location.pathname.includes("contact.html")){
+    let contact = document.getElementById('navContact')
+    contact.classList.add('navActiveOnPage')
+}
+if(window.location.pathname.includes("allblogs.html")){
+    let allBlogs = document.getElementById('allBlogs')
+    allBlogs.classList.add('navActiveOnPage')
+}

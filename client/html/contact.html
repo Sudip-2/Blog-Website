@@ -25,16 +25,16 @@
             </div>
             <div class="navHyperLinks flex a-center ">
                 <abbr title="Home">
-                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="/client/html/index.html" id="navHome" class="">Home</a></li>
                 </abbr>
                 <abbr title="Contact">
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="/client/html/contact.html" id="navContact" class="">Contact</a></li>
                 </abbr>
                 <abbr title="LikedIn">
                     <li><a href="https://www.linkedin.com/in/sudip-paul18/" target="_blank">LikedIn</a></li>
                 </abbr>
                 <abbr title="All blogs">
-                    <li><a href="./allblogs.html">All blogs</a></li>
+                    <li><a href="/client/html/allblogs.html" id="allBlogs" class="">All blogs</a></li>
                 </abbr>
             </div>
             <div class="searchDarkModeToggleBtn flex a-center ">
@@ -58,9 +58,9 @@
 
     <!-- Contact page -->
     <div class="contactContainer  flex flex-dir-c a-center">
-            <h3 id="contactHeading">
-                Want to Get in touch ? Drop me a mail
-            </h3>
+        <h3 id="contactHeading">
+            Want to Get in touch ? Drop me a mail
+        </h3>
         <div class="contactForm flex flex-dir-c a-center ">
             <div class="nameEmail flex ">
                 <div>
@@ -77,7 +77,11 @@
             <div class="contactMessage">
                 <label for="message" id="labelForMessageInCont">Message</label>
                 <br>
-                <textarea name="message" placeholder="Enter your message" id="contactFormMessage" name="message"></textarea>
+                <textarea name="message" placeholder="Enter your message" id="contactFormMessage"
+                    name="message"></textarea>
+                <dialog id="submitPopup">
+                   <h3 id="submitPopupHeading">mail</h3>
+                </dialog>
             </div>
         </div>
         <div>
@@ -87,4 +91,5 @@
 </body>
 <script src="../javascript/nav.js"></script>
 <script src="../javascript/contactinfo.js"></script>
+
 </html>

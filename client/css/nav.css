@@ -75,6 +75,10 @@ a{
 }
 
 .navHyperLinks a:hover{
+    background-color: var(--navbar-color);
+}
+
+.navActiveOnPage{
     text-decoration: underline rgb(29, 105, 247);
 }
 

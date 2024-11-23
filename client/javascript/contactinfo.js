@@ -1,19 +1,29 @@
 let url = "https://personal-blog-site-zeta.vercel.app/"
 let submitbtn = document.getElementById('submitBtnForContactForm')
-submitbtn.addEventListener('click',() => {
+let popup = document.querySelector('#submitPopup')
+let popupHeading = document.querySelector('#submitPopupHeading')
+submitbtn.addEventListener('click', async () => {
     let fullName = document.getElementById('nameOfnameEmail')
     let email = document.getElementById('emailOfnameEmail')
     let message = document.getElementById('contactFormMessage')
-    let senderProfile = {
-        name:fullName.value,
-        email:email.value,
-        message:message.value
-    }
-    fetch(`${url}mail/sendmail`,{
-        method:'post',
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify(senderProfile)
-    })
+        let senderProfile = {
+            name:fullName.value,
+            email:email.value,
+            message:message.value
+        }
+        let response = await fetch(`${url}mail/sendmail`,{
+            method:'post',
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(senderProfile)
+        })
+        if(response.status == 200){
+            let data = await response.json()
+            popupHeading.textContent = data.message
+            popup.showModal()
+            setTimeout(()=>{
+                popup.close()
+            },1500)
+        }
 })

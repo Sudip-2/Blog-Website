@@ -23,7 +23,7 @@ router.post('/sendmail', (req, res) => {
     }
 
     transporter.sendMail(mailOptions)
-    res.status(200).json({message:"Mail sended successfully"})
+    res.status(200).json({message:"Mail sent successfully"})
 })
 
 export default router
