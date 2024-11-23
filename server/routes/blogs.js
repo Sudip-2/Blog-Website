@@ -45,9 +45,7 @@ router.get('/filter',async(req,res) => {
 
 router.get('/onclick',async(req,res) => {
     let id = req.query.title
-    let specificBlog = await blog.findOne({title:id})
-    console.log(id)
-    console.log(specificBlog)
+    let specificBlog = await blog.find({title:id})
     res.send(specificBlog)
 })
 

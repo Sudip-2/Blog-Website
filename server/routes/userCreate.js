@@ -3,7 +3,7 @@ import { blog } from '../models/blogschema.js'
 
 const router = express.Router()
 
-router.use(express.urlencoded())
+router.use(express.urlencoded({extended:true}))
 router.use(express.json())
 
 router.post('/create',(req,res) => {
