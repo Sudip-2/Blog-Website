@@ -103,10 +103,12 @@ function selectInput(list) {
 let searchBtn = document.querySelector('#searchlogo')
 let searchBar = document.querySelector('.search-bar-box')
 
+if(searchBar.value != ''){
 searchBtn.addEventListener('click', async () => {
     const selectedBlogTitle = searchBar.value
     window.location.href = `search.html?title=${selectedBlogTitle}`
 })
+}
 
 window.addEventListener('keydown', (e) => {
     if(searchBar.value != ''){

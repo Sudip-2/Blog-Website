@@ -1,7 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import blogRouter from './routes/blogs.js'
-import notifyRouter from './routes/notify.js'
 import mailRouter from './routes/contact.js'
 import user from './routes/userCreate.js'
 import dotenv from 'dotenv'
@@ -15,7 +14,6 @@ await mongoose.connect(url)
 
 app.use(cors())
 app.use('/blogs', blogRouter);
-app.use('/notify', notifyRouter);
 app.use('/mail',mailRouter)
 app.use('/user',user)
 
