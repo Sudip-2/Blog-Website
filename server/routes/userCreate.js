@@ -25,7 +25,7 @@ router.post("/save-subscription", async (req, res) => {
 
 router.post('/create', async (req, res) => {
     try {
-        blog.create({
+        await blog.create({
             pic: req.body.pic,
             tag: req.body.tag,
             title: req.body.title,
@@ -39,11 +39,15 @@ router.post('/create', async (req, res) => {
             body: req.body.desc,
             icon: req.body.pic
         })
-        try {
-            a.forEach(async (e) => await webpush.sendNotification(e, payload))
-        } catch (error) {
-            console.log(error);
+
+        for (let i = 0; i < a.length; i++) {
+            try {
+                await webpush.sendNotification(a[i], payload)
+            } catch (error) {
+                notifySub.deleteOne({ _id: a[i]._id })
+            }
         }
+
         res.status(201).json({ success: "blog created successfully" })
     }
     catch (error) {
