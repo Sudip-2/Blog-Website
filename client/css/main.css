@@ -384,7 +384,7 @@ abbr {
     }
 }
 
-@media screen and (max-width:550px) {
+@media screen and (max-width:600px) {
     .writerAboutPara {
         padding: 0px 10px;
     }
@@ -417,4 +417,21 @@ abbr {
         width: 20rem;
         height: 10rem;
     }
+    .LatestPostContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        row-gap: 20px;
+        column-gap: 20px;
+    }
+    
+    .blogPostLatestCard {
+        min-height: 360px;
+        width: 360px;
+        padding: 10px 10px;
+        border: 1px solid var(--blog-border-clr);
+        border-radius: 15px;
+        cursor: pointer;
+        margin-inline:auto ;
+    }
+    
 }
