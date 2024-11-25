@@ -11,6 +11,6 @@ self.addEventListener('notificationclick', function(event) {
     event.notification.close();
   
     event.waitUntil(
-      clients.openWindow('http://127.0.0.1:3000/client/html/index.html')
+      clients.openWindow('https://sudipblogs.vercel.app/')
     );
   });
