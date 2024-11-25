@@ -1,6 +1,9 @@
 {
     "rewrites": [
       { "source": "/(.*)", "destination": "/html/$1" }
+    ],
+    "redirects": [
+      { "source": "/css/(.*)", "destination": "/css/$1", "permanent": true }
     ]
   }
   
