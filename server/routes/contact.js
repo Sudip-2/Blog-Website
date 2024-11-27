@@ -19,7 +19,7 @@ router.post('/sendmail', async (req, res) => {
         from:req.body.email,
         to:process.env.receiverEmail,
         subject:`Message from ${req.body.name}`,
-        text:req.body.message
+        text:`${req.body.message} from ${req.body.email}`
     }
 
     await transporter.sendMail(mailOptions)
