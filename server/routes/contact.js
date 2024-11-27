@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
     }
 })
 
-router.post('/sendmail', (req, res) => {
+router.post('/sendmail', async (req, res) => {
     const mailOptions = {
         from:`From ${req.body.name}`,
         to:process.env.receiverEmail,
@@ -22,7 +22,7 @@ router.post('/sendmail', (req, res) => {
         text:req.body.message
     }
 
-    transporter.sendMail(mailOptions)
+    await transporter.sendMail(mailOptions)
     res.status(200).json({message:"Mail sent successfully"})
 })
 
