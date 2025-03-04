@@ -1,7 +1,18 @@
 // Blog on loading page
 let apiUrl = "https://personal-blog-site-zeta.vercel.app/"
-window.addEventListener('load', () => {
-    fetchBlogs()
+window.addEventListener('load', async () => {
+    const blogContainer = document.querySelector('.LatestPostContainer')
+    const Loader = document.querySelector('.Loader')
+    try{
+        await fetchBlogs()
+    }
+    catch(err){
+        console.log(err)
+    }finally{
+        if(blogContainer.childElementCount > 0){ 
+        Loader.style.display = 'none'
+        }
+    }
 })
 
 async function fetchBlogs() {
@@ -14,6 +25,7 @@ function bindBlogs(Blogs) {
     const blogContainer = document.querySelector('.LatestPostContainer')
     const blogTemplate = document.querySelector('.blogCards')
     blogContainer.innerHTML = ''
+
     Blogs.forEach(element => {
         if (!element.pic) return
         const clone = blogTemplate.content.cloneNode(true)

@@ -33,3 +33,6 @@
 .m-inline{
     margin-inline: auto;
 }
+.display-h{
+    display: none;
+}
