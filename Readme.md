@@ -13,19 +13,23 @@ Welcome to my personal blog site! This project is a platform where I share my th
 # Tech Stack
 
 ## Frontend: 
-HTML, CSS, JavaScript
+- HTML
+- CSS
+- JavaScript
 
 ## Backend:
-Node.js, Express.js
+- Node.js
+- Express.js
 
 ## Database: 
-MongoDB with Mongoose
+- MongoDB 
+- Mongoose
 
 ## Deployment: 
-Vercel Link - https://sudipblogs.vercel.app/
+`Vercel Link - `https://sudipblogs.vercel.app/
 
 ## Install dependencies
-npm install
+`npm install`
 
 ## Contact 
 LinkedIn - https://www.linkedin.com/in/sudip-paul18/
