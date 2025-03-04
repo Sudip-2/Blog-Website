@@ -2,36 +2,32 @@
 
 Welcome to my personal blog site! This project is a platform where I share my thoughts, experiences, and knowledge on various topics.
 
-# Features
+## Features
 
-✅ User-friendly UI
-🌙 Light/Dark mode toggle
-✍️ CRUD operations for blog posts
-📱 Responsive design
-🔔 Push notifications for new posts
+- ✅ User-friendly UI
+- 🌙 Light/Dark mode toggle
+- ✍️ CRUD operations for blog posts
+- 📱 Responsive design
+- 🔔 Push notifications for new posts
 
 # Tech Stack
 
-# Frontend: 
+## Frontend: 
 HTML, CSS, JavaScript (Vanilla, TailwindCSS)
 
-# Backend:
+## Backend:
 Node.js, Express.js
 
-# Database: 
+## Database: 
 MongoDB with Mongoose
 
-# Deployment: 
+## Deployment: 
 Vercel
 
-Project divided into two parts Client and Server 
+Project divided into two parts Client and Server
 
-to run server 
-
-# Install dependencies
+## Install dependencies
 npm install
 
-Then run 
-
-# Contact 
+## Contact 
 LinkedIn - https://www.linkedin.com/in/sudip-paul18/
