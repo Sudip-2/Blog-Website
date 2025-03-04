@@ -13,7 +13,7 @@ Welcome to my personal blog site! This project is a platform where I share my th
 # Tech Stack
 
 ## Frontend: 
-HTML, CSS, JavaScript (Vanilla, TailwindCSS)
+HTML, CSS, JavaScript
 
 ## Backend:
 Node.js, Express.js
@@ -22,9 +22,7 @@ Node.js, Express.js
 MongoDB with Mongoose
 
 ## Deployment: 
-Vercel
-
-Project divided into two parts Client and Server
+Vercel Link - https://sudipblogs.vercel.app/
 
 ## Install dependencies
 npm install
